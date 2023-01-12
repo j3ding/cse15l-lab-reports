@@ -15,7 +15,7 @@ This fails, so try to log in using UCSD personal email (should still use CSE 15L
 ---
 
 ## ***Step 3: Trying Some Commands***
-Successfully trying some commands including 'cd' (change directory), 'ls' (list files in current directory), 'pwd' (print current working directory).
+Successfully trying some commands including 'cd' (change directory), 'ls' (list files in current directory), and 'pwd' (print current working directory).
 * Also success in other commands like 'cd ~', 'ls -lat', and 'ls -a'.
 But fails in trying 'mkdir' and 'cp', which seems to be an error in format and math expression.
 * Also fails in these two commands: 'cp /home/linux/ieng6/cs15lwi23/public/hello.txt ~/' and 'cat /home/linux/ieng6/cs15lwi23/public/hello.txt', which mean that there is no such file in current directory. Possible solution: try to create a 'hello.txt' in this directory manually.
