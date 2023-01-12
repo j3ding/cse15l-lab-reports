@@ -13,7 +13,7 @@ This fails, so try to log in using UCSD personal email (should still use CSE 15L
 ![ss1](https://github.com/j3ding/cse15l-lab-reports/blob/main/ss1.png)
 
 ## ***Step 3  Trying Some Commands***
-* Successfully trying some commands including `cd` (change directory), `ls` (list files in current directory), and `pwd` (print current working directory). \ Also success in other commands like `cd ~`, `ls -lat`, and `ls -a`.
-* But fails in trying `mkdir` and `cp`, which seems to be an error in format and math expression. \ Also fails in `cp /home/linux/ieng6/cs15lwi23/public/hello.txt ~/` and `cat /home/linux/ieng6/cs15lwi23/public/hello.txt`, which mean that there is no such file in current directory. To solve this, try to create a `hello.txt` in this directory manually. \
+* Successfully trying some commands including `cd` (change directory), `ls` (list files in current directory), and `pwd` (print current working directory). Also success in other commands like `cd ~`, `ls -lat`, and `ls -a`.
+* But fails in trying `mkdir` and `cp`, which seems to be an error in format and math expression. Also fails in `cp /home/linux/ieng6/cs15lwi23/public/hello.txt ~/` and `cat /home/linux/ieng6/cs15lwi23/public/hello.txt`, which mean that there is no such file in current directory. To solve this, try to create a `hello.txt` in this directory manually. \
 ![ss3](https://github.com/j3ding/cse15l-lab-reports/blob/main/ss3.png)
 ![ss2](https://github.com/j3ding/cse15l-lab-reports/blob/main/ss2.png)
