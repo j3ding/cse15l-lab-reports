@@ -3,7 +3,6 @@
 
 ## ***Step 1: Installing VScode***
 I installed VScode on my computer from a previous CSE class. 
-* For installation, using this [link](https://code.visualstudio.com/).
 VScode looks like this after opening it:
 ![vscode](https://github.com/j3ding/cse15l-lab-reports/blob/main/vscode.png)
 ---
