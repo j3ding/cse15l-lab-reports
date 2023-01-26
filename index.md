@@ -10,7 +10,7 @@ If not get installed yet, use [this link](https://code.visualstudio.com/) and fo
 2. Waiting for the installation and unzip the download file. 
 * Note: If the download does not start, please use the alternative link on the top of the download page.
 3. Open the file and follow the instructions to install it on the computer. If the installation finishes, VScode should look like the following picture as shown. \
-![vscode](https://github.com/j3ding/cse15l-lab-reports/blob/main/vscode.png) \
+![vscode](<img width="1440" alt="vscode" src="https://user-images.githubusercontent.com/122497181/214936368-03c1593f-8d4f-49c1-9e05-ef352e54d6b0.png">) \
 **For Windows Users:** For the next step, should install `git` for the next step, using [this link](https://gitforwindows.org/) to install.
 * Click on *Download* and follow the instructions.
 * After the installation, set the default terminal to use the installed `git bash` in VScode. Click [here](https://stackoverflow.com/questions/42606837/how-do-i-use-bash-on-windows-from-the-visual-studio-code-integrated-terminal/50527994#50527994) to see the instructions in details.
@@ -27,7 +27,7 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?
 ```
 4. Type `yes` and enter, then enter the password for the account. * Note: This may cause a system error. If this happens, try several times to enter the password, or try to log in using UCSD personal email (as shown in the graph).
 5. If log in successfully, would see `Last login: ...` on the terminal.
-![ss1](https://github.com/j3ding/cse15l-lab-reports/blob/main/ss1.png)
+![ss1](<img width="1440" alt="ss1" src="https://user-images.githubusercontent.com/122497181/214936387-9e58f1d6-5af9-4538-b04c-fb46c803f3b9.png">)
 
 ## ***Step 3  Trying Some Commands***
 Trying some commands in the terminal.
@@ -38,5 +38,5 @@ Trying some commands in the terminal.
 * `mkdir` can make a new directory. This command should be followed by a directory's name.
 * There are other useful commands such as `cd ~`, `ls -lat`, `ls -a` and so on.
 * Type `exit` if want to log out. \
-![ss3](https://github.com/j3ding/cse15l-lab-reports/blob/main/ss3.png)
-![ss2](https://github.com/j3ding/cse15l-lab-reports/blob/main/ss2.png)
+![ss3](<img width="1440" alt="ss3" src="https://user-images.githubusercontent.com/122497181/214936417-2ecac01c-d761-4c8d-acf6-ddac9d1a1d67.png">)
+![ss2](<img width="1440" alt="ss2" src="https://user-images.githubusercontent.com/122497181/214936399-298d462b-7f11-4edf-968d-d761e339fba7.png">)
