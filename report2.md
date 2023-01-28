@@ -33,7 +33,8 @@ assertArrayEquals(new int[]{ }, ArrayExamples.reversed(input1));
 (screenshot here)
 4. Bug:
 * This failure is caused by a lack of code to copy data from the original array to the new one.
-* To fix this, write a for loop to deep copy the elements to the new array, which has to be written before the reverse. \
+* To fix this, write a for loop to deep copy the elements to the new array, which has to be written before the reverse.
+* After the copy, the original array can reverse its elements by copying the elements in the new array in a reverse order. \
 **Note: To fix this problem, must do deep copy rather than shallow copy (i.e write `int[] newArray = arr;` instead of the for loop).**
 
 The code before change:
