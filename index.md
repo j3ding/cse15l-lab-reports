@@ -25,7 +25,8 @@ public String handleRequest(URI url) {
         return "404 Not Found!";
     }
 }
-
+```
+```
 class StringServer {
     public static void main(String[] args) throws IOException {
         if(args.length == 0){
@@ -39,6 +40,7 @@ class StringServer {
     }
 }
 ```
+
 Then, to see and change the website, compile in the terminal in VScode. Type this in the terminal.
 ```
 javac Server.java StringServer.java
