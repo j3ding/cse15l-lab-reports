@@ -5,7 +5,7 @@
 
 ## ***Part One***
 In this part, write a `StringServer.java` web server in `wavelet` and expect to print input strings on the page.
-* The request format should be like this: `/add-message?s=XXX` where XXX stands for the input string. Write the code like this:
+* The request format should be like this: `/add-message?s=XXX` where XXX stands for the input string. Write the code like this.
 ```
 public String handleRequest(URI url) {
     if (url.getPath().equals("/")) {
