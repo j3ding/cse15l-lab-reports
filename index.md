@@ -122,3 +122,6 @@ static int[] reversed(int[] arr) {
   return arr;
 }
 ```
+
+## ***Part Three***
+*From week two's lab, web server is a new concept to me, and I learn how to establish a webpage using the code and terminal commands. I also did not know that small port numbers can cause an error before this lab. After reading the code in `NumberServer.java` and writing my own web server `StringServer.java`, I can understand the basics and implement numbers or strings properly.*
