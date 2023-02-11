@@ -2,7 +2,7 @@
 
 ## ***Part One***
 In this part, write a `StringServer.java` web server in `wavelet` and expect to print input strings on the page.
-* The request format should be like this: `/add-message?s=XXX` where XXX stands for the input string. Write the code like this:
+* The request format should be like this: `/add-message?s=XXX` where XXX stands for the input string. Write the code like this.
 ```
 public String handleRequest(URI url) {
     if (url.getPath().equals("/")) {
@@ -22,7 +22,8 @@ public String handleRequest(URI url) {
         return "404 Not Found!";
     }
 }
-
+```
+```
 class StringServer {
     public static void main(String[] args) throws IOException {
         if(args.length == 0){
@@ -36,12 +37,13 @@ class StringServer {
     }
 }
 ```
-Then, to see and change the website, compile in the terminal in VScode:
-* Type in the terminal:
+
+Then, to see and change the website, compile in the terminal in VScode. Type this in the terminal.
 ```
 javac Server.java StringServer.java
 java StringServer 8000
 ```
+
 `8000` is the port number (can try other numbers, but suggest to choose higher numbers), then the terminal gives a link `http://localhost:8000`(Command + Click to open it), and the page should be like this.
 ![2-1-1](https://user-images.githubusercontent.com/122497181/215298931-88d81e51-1347-45c4-84d3-5d8f8c7f627f.png)
 * Now type in the URL to append strings to the page. In this case, type `http://localhost:8000/add-message?s=Hello` to input the string `Hello` and press Enter. \
@@ -60,7 +62,7 @@ Note: If want to stop, press Control + C.
 
 ## ***Part Two***
 This part would analyze a bug in method `reversed()` in `ArrayExamples.java` and implement tests to show this in `ArrayTests.java`. \
-The code before change:
+The code before change is as shown.
 ```
 static int[] reversed(int[] arr) {
   int[] newArray = new int[arr.length];
@@ -70,30 +72,30 @@ static int[] reversed(int[] arr) {
   return arr;
 }
 ```
-1. Failure-inducing input:
+1. Failure-inducing input.
 ```
 int[] input2 = {10, 20, 30};
 assertArrayEquals(new int[] {30, 20, 10}, ArrayExamples.reversed(input2));
 ```
 * Create a new nonempty integer array `{10, 20, 30}` in `ArrayTests.java` and expected to return `{30, 20, 10}`. 
-2. Input that does not induce a failure:
+2. Input that does not induce a failure.
 ```
 int[] input1 = { };
 assertArrayEquals(new int[]{ }, ArrayExamples.reversed(input1));
 ```
 * Since this input is empty, and the original code only sets the size of the result array (0 in this case), the returned array is null, which passes the test accidentally.
-3. Symptom:
+3. Symptom.
 * As is shown below, for array input `{10, 20, 30}`, the terminal returns a failure message.
 * The returned value for the first element is expected to be `30` but actually `0`.
 * The terminal does not report a problem in the test case of the empty array, so the empty input passes the test.
 ![2-2-1](https://user-images.githubusercontent.com/122497181/215299015-2849316b-bddc-4647-929e-03c7cabca0fb.png)
-4. Bug:
+4. Bug.
 * This failure is caused by a lack of code to copy data from the original array to the new one.
 * To fix this, write a for loop to deep copy the elements to the new array, which has to be written before the reverse.
 * After the copy, the original array can reverse its elements by copying the elements in the new array in a reverse order. \
 **Note: To fix this problem, must do deep copy rather than shallow copy (i.e write `int[] newArray = arr;` instead of the for loop).**
 
-The code before change:
+The code before change is
 ```
 static int[] reversed(int[] arr) {
   int[] newArray = new int[arr.length];
@@ -103,7 +105,8 @@ static int[] reversed(int[] arr) {
   return arr;
 }
 ```
-The code after change:
+
+The code after change is
 ```
 static int[] reversed(int[] arr) {
   int[] newArray = new int[arr.length];
@@ -118,4 +121,4 @@ static int[] reversed(int[] arr) {
 ```
 
 ## ***Part Three***
-*For me, the web server in week 2's lab is interesting to me. Since I have never learned anything about web server, I did not know I can create a webpage by establishing on the terminal in VScode. I also did not know that small port numbers can cause an error. In the lab, after reading the code in `NumberServer.java` and writing my own web server `StringServer.java`, I can understand the basics and implement numbers or strings properly. By learning this, it is more comfortable for me to read the link as well.*
+*From week two's lab, web server is a new concept to me, and I learn how to establish a webpage using the code and terminal commands. I also did not know that small port numbers can cause an error before this lab. After reading the code in `NumberServer.java` and writing my own web server `StringServer.java`, I can understand the basics and implement numbers or strings properly.*
