@@ -4,26 +4,28 @@ Reproduce the tasks from the competition.
 ## Baseline
 In this task, should complete the steps as fast as possible.
 1. Setup: if fork [the repository](https://github.com/ucsd-cse15l-w23/lab7) before, delete it. Should look like this in the personal account.
-(4-1-1 here)
+![4-1-1](https://user-images.githubusercontent.com/122497181/221335426-00b7079f-f915-4b71-8d83-ee7ad1fa43fd.png)
 2. Fork [the repository](https://github.com/ucsd-cse15l-w23/lab7).
-(4-1-2 here)
+![4-1-2](https://user-images.githubusercontent.com/122497181/221335461-066dd439-4d78-4c73-8a6c-90d0d3e0dba9.png)
 3. Start the timer.
 4. Log into ieng6 on the terminal of VScode by typing the command `$ ssh cs15lwi23xxx@ieng6.ucsd.edu` where `xxx` differs for different student accounts. Since have used this account for last log in, can directly press `<up><enter>` in the terminal instead of typing. The terminal would look like this if successfully log in.
 * Note: if fails to log in using the course account, can use the student email `$ ssh <email>@ieng6.ucsd.edu` to log in.
-(4-1-4 here)
-5. Clone the fork of the repository from personal Github account. Type `$ git clone https://github.com/xxxx/lab7` in the terminal, where `xxxx` is the Github username.
+![4-1-4](https://user-images.githubusercontent.com/122497181/221335464-84380fa2-23ff-4bec-99ff-ddb61bc33361.png)
+5. Clone the fork of the repository from personal Github account. Type `$ git clone` in the terminal, and the ssh clone URL `git@github.com:xxxx/lab7.git`, where `xxxx` represents the Github account name. The following picture shows how to access the URL.
+* Note: if cannot use the ssh git clone, use `$ git clone https://github.com/xxxx/lab7.git` instead, as is shown below.
 * Note: if the `lab7` directory already exists in the server, use `$ rm -r lab7` to remove the non-empty directory `lab7` and enter `y` to confirm.
-(4-1-5 here)
+![4-1-5](https://user-images.githubusercontent.com/122497181/221335468-09bacd76-839d-4388-b17e-562490b5472d.png)
+![4-1-5(2)](https://user-images.githubusercontent.com/122497181/221335470-629d5ef1-b36b-4f0c-b9a2-e7924b5f3820.png)
 6. Change directory to `lab7` and run the tests, typing following in the terminal for MAC users.
 ```
 $ javac -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar *.java
 $ java -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar org.junit.runner.JUnitCore ListExamplesTests
 ```
 * Note: If have run the tests before, type `javac` and then `<up><up><up><up><up><up><enter>` to search for previous calls, and similar for the `java` command. As is shown below, there is one failure.
-(4-1-6 here)
-7. Fix the problem. In this case, there is one problem in `merge` method in `ListExamples.java`. Change `index1 += 1` in line 43 into `index2 += 1`.The correct code should look like this.
-(4-1-7 here)
+![4-1-6](https://user-images.githubusercontent.com/122497181/221335981-ff370f32-202c-4c91-86c8-dee8539c362a.png)
+7. Fix the problem. In this case, there is one problem in `merge` method in `ListExamples.java`. Change `index1 += 1` in line 43 into `index2 += 1`. Type `$ nano L<tab><enter>` in the terminal and it would complete it as `$ nano ListExamples.java`. This command opens a new window of editor of this file that can be edited. Fix the problem and press `Ctrl-O` to save and `Ctrl-X` to exit.
+![4-1-7](https://user-images.githubusercontent.com/122497181/221335479-2a534ae4-f62a-4e57-905d-1683efdab3a8.png)
 8. Run the tests, using the same method as step 6 did to save time (or use copy and paste: on MAC, use `Command-C` to copy and `Command-V` to paste). The two tests should all pass like this.
-(4-1-8 here)
-9. Open Github Desktop, select `Commit to main` and then `Push to origin`. Can also use `$ git add <filename>` to commit the file, and `$ git push` to push the final changes to personal Github account.
-(4-1-9 here)
+![4-1-8](https://user-images.githubusercontent.com/122497181/221335480-8c218c95-db93-4699-9e00-9db6c1ccc287.png)
+9. As is shown below, type `$ git add L<tab><enter>` and use `$ git commit` to commit. Then, type `$ git push o<tab> m<tab><enter>` to push changes to the Github account. Terminal would ask for username and password of the account.
+![4-1-9](https://user-images.githubusercontent.com/122497181/221335484-d02b8a6d-553b-4a21-b861-07b893b0cac5.png)
