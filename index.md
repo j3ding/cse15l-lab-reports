@@ -1,62 +1,86 @@
 # ***Hello, world!***
 
 ---
-# **Lab Report 4**
-Reproduce the tasks from the competition "Baseline". Should complete the steps as fast as possible.
+# **Lab Report 5**
 
-## Step 1
-Setup: if fork [the repository](https://github.com/ucsd-cse15l-w23/lab7) before, delete it. Should look like this in the personal account.
-![4-1-1](https://user-images.githubusercontent.com/122497181/221335426-00b7079f-f915-4b71-8d83-ee7ad1fa43fd.png)
+In lab report 3, explore 4 interesting command-line options for `find` command. 
+This lab report contains 4 interesting command-line options for `grep` command. Information about the options are from [this source](https://www.digitalocean.com/community/tutorials/grep-command-in-linux-unix).
 
-## Step 2
-Fork [the repository](https://github.com/ucsd-cse15l-w23/lab7).
-![4-1-2](https://user-images.githubusercontent.com/122497181/221335461-066dd439-4d78-4c73-8a6c-90d0d3e0dba9.png)
 
-## Step 3
-Start the timer.
+## 1. `grep --color` option
 
-## Step 4
-Log into ieng6 on the terminal of VScode by typing the command `$ ssh cs15lwi23xxx@ieng6.ucsd.edu` where `xxx` differs for different student accounts. Since have used this account for last log in, can directly press `<up><enter>` in the terminal instead of typing. The terminal would look like this if successfully log in (Note: if fails to log in using the course account, can use the student email `$ ssh <email>@ieng6.ucsd.edu` to log in).
-![4-1-4](https://user-images.githubusercontent.com/122497181/221335464-84380fa2-23ff-4bec-99ff-ddb61bc33361.png)
-* To save time of typing password, generate ssh keys for ieng6 in the following steps.
-* 1. In local terminal, type `ssh-keygen`.
-  2. Keep entering `<Enter>` until the terminal gives a "randomart image", and the public key is saved in a certain path. 
-  3. Log into the ieng6 remote server and type `mkdir .ssh` in the terminal. Log out the account using `Ctrl+D`.
-  4. In order to copy the public ssh key just created, find it in directory `.ssh` and a file called `authorized_keys` (note that the public key file ends in `.pub`). Copy the path presented in the terminal where the terminal says `Your public key has been saved in: <copy this path>`.
-  5. Run this and type the password (on local computer).
-  ```
-  $ scp <path copied in last step> <account name>@ieng6.ucsd.edu:~/.ssh/authorized_keys
-  ```
-  6. Log into the ieng6 remote server again and it does not require entering password.
-  ![ss](https://user-images.githubusercontent.com/122497181/224210716-3cce71d7-bdd2-47bc-b119-3fee0ae68ccf.png)
-
-## Step 5
-Clone the fork of the repository from personal Github account. Type `$ git clone` in the terminal, and the ssh clone URL `git@github.com:xxxx/lab7.git`, where `xxxx` represents the Github account name. The following picture shows how to access the URL.
-* Note: if cannot use the ssh git clone, use `$ git clone https://github.com/xxxx/lab7.git` instead, as is shown below.
-* Note: if the `lab7` directory already exists in the server, use `$ rm -r lab7` to remove the non-empty directory `lab7` and enter `y` to confirm.
-![4-1-5](https://user-images.githubusercontent.com/122497181/221335468-09bacd76-839d-4388-b17e-562490b5472d.png)
-![4-1-5(2)](https://user-images.githubusercontent.com/122497181/221335470-629d5ef1-b36b-4f0c-b9a2-e7924b5f3820.png)
-
-## Step 6
-Change directory to `lab7` and run the tests, typing following in the terminal for MAC users.
+Type the following command on the terminal to search for a specific string, for example `industry` in `ch1.txt` file under the `Abernathy` subdirectory in `written_2` directory. The command asks the terminal to print all lines in this file that contain the required string with the string highlighted with red. This is useful in searching for a specific string and see its context.
 ```
-$ javac -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar *.java
-$ java -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar org.junit.runner.JUnitCore ListExamplesTests
+$ grep --color "industry" written_2/non-fiction/OUP/Abernathy/ch1.txt
 ```
-* Note: If have run the tests before, type `javac` and then `<up><up><up><up><up><up><enter>` to search for previous calls, and similar for the `java` command. As is shown below, there is one failure.
-![4-1-6](https://user-images.githubusercontent.com/122497181/221335981-ff370f32-202c-4c91-86c8-dee8539c362a.png)
+* Note that the option is `--color` rather than `-color`.
+* `""` should be the string that we want to highlight in the file(s).
+* The path after the string must point to a file rather than a directory or subdirectory.
+* The terminal should look like this as shown below.
+![5-1-1](https://user-images.githubusercontent.com/122497181/224458377-8fc89639-03d2-4fc2-940a-7be177616bec.png)
 
-## Step 7
-Fix the problem. In this case, there is one problem in `merge` method in `ListExamples.java`. Change `index1 += 1` in line 43 into `index2 += 1`. Type `$ nano L<tab><enter>` in the terminal and it would complete it as `$ nano ListExamples.java`. This command opens a new window of editor of this file that can be edited. 
-* There are a lot of ways to fix the problem. For example, use `Ctrl+\` to search for `index1 += 1` and replace it into `index2 += 1`. Since there are more than one matchings, can use `^N` to move to different matchings.
-* After edit, press `Ctrl-O` to save and `Ctrl-X` to exit.
-![4-1-7](https://user-images.githubusercontent.com/122497181/221335479-2a534ae4-f62a-4e57-905d-1683efdab3a8.png)
+We can also search for all files in the same subdirectory at the same time. Since this would print a lot in the terminal, try the following command instead.
+```
+$ grep --color "museums" written_2/travel_guides/berlitz1/IntroDublin.txt
+```
+* If want to use this command and option on all files in a subdirectory, for example `berlitz1`, may try `...berlitz1/*` where `*` represents all files in the subdirectory.
+* The command only prints **the exact line** of the required string rather than the paragraph or the whole passage.
+* By the last two labs, can save time by typing `<up>` to get the command in the first example. Only have to change the string and path.
+![5-1-2](https://user-images.githubusercontent.com/122497181/224458380-3c9758f2-0c64-4855-9b1b-18962bb2a5ad.png)
 
-## Step 8
-Run the tests, using the same method as step 6 did to save time (or use copy and paste: on MAC, use `Command-C` to copy and `Command-V` to paste). The two tests should all pass like this.
-![4-1-8](https://user-images.githubusercontent.com/122497181/221335480-8c218c95-db93-4699-9e00-9db6c1ccc287.png)
 
-## Step 9
-As is shown below, type `$ git add L<tab><enter>` and use `$ git commit` to commit. Then, type `$ git push o<tab> m<tab><enter>` to push changes to the Github account. Terminal would ask for username and password of the account.
-![4-1-9](https://user-images.githubusercontent.com/122497181/221335484-d02b8a6d-553b-4a21-b861-07b893b0cac5.png)
+## 2. `grep -r` option
 
+This option represents for searching for a specific string recursively in a directory. Run the following command line on the terminal. In this case, want to search for `regionalization` in all subdirectories in `written_2/non-fiction/OUP` directory. It is useful to directly search a string when the user only knows the name of the directories, and it uses recursion.
+```
+$ grep -r "regionalization" written_2/non-fiction/OUP/*
+```
+* `*` represents for all the files in all the subdirectories in `OUP` subdirectory.
+* Similar to the previous command option, it only prints the corresponding lines rather than the whole passage.
+* The result is shown below, what have been found in `ch1.txt` is printed before that in `ch15.txt`, and this is because the command uses recursion.
+![5-2-1](https://user-images.githubusercontent.com/122497181/224458381-8f0283d9-6d6e-40e5-b0d1-909070e916e9.png)
+
+In this case, give the specific file name and search recursively for a string. Run the following command on the terminal.
+```
+$ grep -r "support" written_2/travel_guides/berlitz2/Vallarta-History.txt
+```
+* This time the terminal would only prints out the results in this specific file called `Vallarta-History`, as is shown below.
+![5-2-2](https://user-images.githubusercontent.com/122497181/224458384-3e355c4f-918a-4c46-841b-fc3185f1b27b.png)
+
+
+## 3. `grep -c` option
+This option counts the lines of a specific string presents in files. Type the following command line on the terminal. This command option is useful because it can replace the `wc` command and can check for all files given the directory or subdirectories.
+```
+$ grep -c "credit cards" written_2/travel_guides/berlitz1/*
+```
+* Want to get the number of lines that contain `"credit cards"` in all files in the subdirectory `berlitz1`, where `*` represents for all files in this subdirectory.
+* The results are certain numbers corresponding to each file in the subdirectory.
+* Note that if there is no such string in the file, the result would be `0` as shown below.
+* This command would not print the specific text but only show the numerical results for counting.
+![5-3-1](https://user-images.githubusercontent.com/122497181/224458388-4942b765-434b-4c26-8255-0b2db5bc8c6d.png)
+
+If we want to search for a string within only one file, run the command line like the following.
+```
+$ grep -c "history" written_2/travel_guides/berlitz2/Amsterdam-WhereToGo.txt
+```
+* In this case, only want to know the number of lines in the file called `Amsterdam-WhereToGo.txt` that contains `"history"`.
+* Since look for only one file this time, the path of the file is not shown (only a number `9` that stands for the requried result).
+![5-3-2](https://user-images.githubusercontent.com/122497181/224458392-b1bbfaf7-10a7-4bd5-9a13-280173916bc2.png)
+
+
+## 4. `grep -v` option
+This command requires the terminal to print out the lines in the required file that do not contain a specific string. This is particuarly useful if we do not want to see some texts, which can be interpreted as the complement of the `grep -r` option. For example, run the following command on the terminal.
+```
+$ grep -v "and" written_2/non-fiction/OUP/Castro/chY.txt
+```
+* This command does not show all the lines that contain `"and"` in a file called `chY.txt`.
+* The results are printed on the terminal, and as shown below there is no required string `"and"` in the printed result.
+![5-4-1](https://user-images.githubusercontent.com/122497181/224458394-a2acf866-6f33-416f-9239-42a773c12092.png)
+
+This option can also be used to check in all files within one directory or subdirectory. For instance, type the following on the terminal.
+```
+$ grep -v "to" written_2/non-fiction/OUP/Castro/*
+```
+* Like in the other options, `"*"` represents all files in the subdirectory `Castro`.
+* Since the command searches for several files, the printed result contains the path for a specific file for every line. Can see from the following screenshot that this command option prints all the results line by line.
+![5-4-2](https://user-images.githubusercontent.com/122497181/224458396-7ff05788-6952-4001-b9e0-e8aaf1404d36.png)
